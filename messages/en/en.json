@@ -1,5 +1,26 @@
 {
-  "HomePage": {
-    "title": "Hello world!"
+  "hero": {
+    "h1": "Secrets of Videos",
+    "h2": "0 → 100,000 in 90 Days",
+    "p": "Become famous in 3 months without ads! Turn your ideas into millions of views.",
+    "price1": "$40",
+    "price2": "$80",
+    "btn": "Buy with Discount"
+  },
+  "Tarifs": {
+    "h2": "Prices"
+  },
+  "discover": {
+    "h2_start": "Learn how to create content that ",
+    "h2_span": "conquers the audience",
+    "p": "Materials that can reach thousands of people",
+    "btn": "Buy with Discount"
+  },
+  "form": {
+    "h2": "Enter your details",
+    "name": "Name",
+    "tg": "Telegram nickname",
+    "email": "Email*",
+    "btn": "Send"
   }
 }

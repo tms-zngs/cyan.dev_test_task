@@ -9,7 +9,7 @@ export interface Tariff {
 export const fetchTariffs = async (locale: string): Promise<Tariff[]> => {
   try {
     const res = await fetch(
-      "https://gist.githubusercontent.com/tms-zngs/8717ed83ff5dc58b0571bc8c91d8c553/raw/e8dadc7a036a70652fc3db01435f8c5b3298cb97/gistfile1.txt"
+      "https://gist.githubusercontent.com/tms-zngs/8717ed83ff5dc58b0571bc8c91d8c553/raw/a09e2fa095af2c801f85fece568d2a823e5fee0a/gistfile1.txt"
     );
     const data = await res.json();
     return data[locale] || [];

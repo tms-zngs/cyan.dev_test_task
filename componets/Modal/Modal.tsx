@@ -11,13 +11,12 @@ interface ModalProps {
 export default function Modal({ isOpen, onClose, children }: ModalProps) {
   const [isVisible, setIsVisible] = useState(false);
 
-  // Управляем появлением/исчезновением
   useEffect(() => {
     if (isOpen) {
       setIsVisible(true);
       document.body.style.overflow = "hidden";
     } else {
-      const timeout = setTimeout(() => setIsVisible(false), 300); // время анимации
+      const timeout = setTimeout(() => setIsVisible(false), 300);
       document.body.style.overflow = "";
       return () => clearTimeout(timeout);
     }
@@ -43,7 +42,6 @@ export default function Modal({ isOpen, onClose, children }: ModalProps) {
           isOpen ? "scale-100" : "scale-95"
         }`}
       >
-        {/* Кнопка закрытия */}
         <button
           className="absolute top-4 right-4 cursor-pointer"
           onClick={onClose}
@@ -53,8 +51,6 @@ export default function Modal({ isOpen, onClose, children }: ModalProps) {
             <use href="/sprite.svg#icon-close"></use>
           </svg>
         </button>
-
-        {/* Контент */}
         <div className="w-full h-full flex flex-col justify-center items-center px-4">
           {children}
         </div>

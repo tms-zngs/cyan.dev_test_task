@@ -6,9 +6,13 @@ import Image from "next/image";
 import DiscountButton from "../DiscountButton/DiscountButton";
 import Modal from "../Modal/Modal";
 import Form from "../Form/Form";
+import { useTranslations } from "next-intl";
 
 export default function Hero() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const t = useTranslations("hero");
+  const m = useTranslations("form");
 
   return (
     <section id="hero" className="mb-[132px]">
@@ -29,23 +33,21 @@ export default function Hero() {
               bg-[linear-gradient(151deg,#90e8ff_0%,#9c9eff_40.3%,#e3a1ff_79.87%,#e56f8c_100%)] 
               bg-clip-text text-transparent whitespace-nowrap"
             >
-              Від 0 до 100,000 за 90 днів
+              {t("h2")}
             </h2>
             <h1 className="font-extrabold text-[3.38rem] uppercase text-center text-white leading-[1.1]">
-              Секрети вирусних відео
+              {t("h1")}
             </h1>
           </div>
         </div>
 
         <p className="text-white text-[0.88rem] font-normal text-center mt-[170px] leading-[1.2] mb-[44px]">
-          Стати відомим лише за 3 місяці без витрат на рекламу! Дізнайтеся ключ
-          до створення вірусного контенту та перетворите свої ідеї на мільйонні
-          перегляди.
+          {t("p")}
         </p>
 
         <DiscountButton
           width="19.56rem"
-          text="Придбати зі знижкою"
+          text={t("btn")}
           discount="-50%"
           onClick={() => setIsModalOpen(true)}
           background="#fff"
@@ -54,10 +56,10 @@ export default function Hero() {
 
         <div className="flex justify-center items-center gap-2 mt-[11px]">
           <span className="font-semibold text-[1.25rem] leading-[1.07974] text-[#ff4a77]">
-            1000 грн
+            {t("price1")}
           </span>
           <span className="font-semibold text-[0.88rem] leading-[1.54248] text-[#c5c5c5] line-through">
-            2000 грн
+            {t("price2")}
           </span>
         </div>
       </Container>
@@ -65,9 +67,9 @@ export default function Hero() {
       {/* Модалка с формой */}
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
         <h2 className="font-bold text-[1.5rem] uppercase text-center text-white mb-[36px] mt-[160px]">
-          Укажіть свої дані
+          {m("h2")}
         </h2>
-        <Form />
+        <Form onSuccess={() => setIsModalOpen(false)} />
       </Modal>
     </section>
   );
