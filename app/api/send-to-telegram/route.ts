@@ -2,11 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 import axios, { AxiosError } from "axios";
 
 export async function POST(request: NextRequest) {
-  // Получаем токен бота и ID чата из переменных окружения
   const botToken = process.env.BOT_TOKEN;
   const chatId = process.env.CHAT_ID;
-
-  // Проверяем наличие переменных окружения
   if (!botToken || !chatId) {
     console.error(
       "BOT_TOKEN or CHAT_ID is missing from environment variables."
@@ -18,7 +15,6 @@ export async function POST(request: NextRequest) {
   }
 
   try {
-    // Получаем данные из тела запроса
     const { name, tg, email } = await request.json();
 
     if (!name || !tg || !email) {
@@ -27,8 +23,6 @@ export async function POST(request: NextRequest) {
         { status: 400 }
       );
     }
-
-    // Формируем сообщение для отправки в Telegram
     const messageText = `
       Нова заявка на покупку!
       ---------------------------------
@@ -37,7 +31,6 @@ export async function POST(request: NextRequest) {
       Email: ${email}
       `;
 
-    // URL для отправки сообщения через Telegram Bot API
     const telegramApiUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
 
     const response = await axios.post(telegramApiUrl, {

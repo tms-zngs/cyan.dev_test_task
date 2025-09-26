@@ -9,9 +9,7 @@ interface DiscountButtonProps {
   circleSize?: string;
   textOffset?: string;
   onClick?: () => void;
-  /** Фон кнопки */
   background?: string;
-  /** Тень кнопки */
   boxShadow?: string;
 }
 

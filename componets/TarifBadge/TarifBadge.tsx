@@ -4,15 +4,15 @@ import React from "react";
 
 interface BadgeProps {
   text: string;
-  background?: string; // фон, может быть градиент, не трогаем
-  textColor?: string; // цвет текста однотонный
-  textGradient?: string; // новый проп для градиентного текста
-  fontWeight?: number | string; // например 700
-  fontSize?: string; // например "1rem"
+  background?: string;
+  textColor?: string;
+  textGradient?: string;
+  fontWeight?: number | string;
+  fontSize?: string;
   textTransform?: "uppercase" | "lowercase" | "capitalize" | "none";
-  boxShadow?: string; // тень
-  paddingX?: string; // внутренние отступы по горизонтали
-  paddingY?: string; // внутренние отступы по вертикали
+  boxShadow?: string;
+  paddingX?: string;
+  paddingY?: string;
 }
 
 const TarifBadge: React.FC<BadgeProps> = ({
@@ -32,7 +32,7 @@ const TarifBadge: React.FC<BadgeProps> = ({
         backgroundImage: textGradient,
         WebkitBackgroundClip: "text" as const,
         WebkitTextFillColor: "transparent" as const,
-        color: undefined, // отключаем обычный цвет
+        color: undefined,
       }
     : { color: textColor };
 

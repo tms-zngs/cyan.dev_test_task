@@ -63,8 +63,6 @@ export default function Hero() {
           </span>
         </div>
       </Container>
-
-      {/* Модалка с формой */}
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
         <h2 className="font-bold text-[1.5rem] uppercase text-center text-white mb-[36px] mt-[160px]">
           {m("h2")}

@@ -6,16 +6,13 @@ import { usePathname, useRouter } from "next/navigation";
 const LocaleSwitcher = () => {
   const [open, setOpen] = useState(false);
   const router = useRouter();
-  const pathname = usePathname(); // текущий путь, например /en/page
-
-  // Берём текущую локаль из URL (первые 2 символа после '/')
+  const pathname = usePathname();
   const currentLocale = pathname?.split("/")[1] ?? "en";
 
   const locales = ["en", "ua"];
 
   const changeLocale = (newLocale: string) => {
     setOpen(false);
-    // Меняем первый сегмент пути на новую локаль
     const newPath = pathname.replace(/^\/(en|ua)/, `/${newLocale}`);
     router.push(newPath);
   };
@@ -26,7 +23,6 @@ const LocaleSwitcher = () => {
         onClick={() => setOpen(!open)}
         className="inline-flex items-center justify-center gap-[10px]"
       >
-        {/* Текст слева */}
         <span className="font--raleway text-white font-bold text-[0.88rem] leading-[1.42857]">
           {currentLocale.toUpperCase()}
         </span>

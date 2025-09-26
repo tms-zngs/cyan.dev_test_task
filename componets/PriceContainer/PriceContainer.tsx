@@ -1,8 +1,8 @@
 import React from "react";
 
 interface PriceContainerProps {
-  background?: string; // фон, можно градиент
-  boxShadow?: string; // тень, например inset
+  background?: string;
+  boxShadow?: string;
   children?: React.ReactNode;
 }
 

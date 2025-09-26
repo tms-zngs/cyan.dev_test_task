@@ -55,8 +55,6 @@ const Tarifs = () => {
           <h2 className="font-bold text-[1.5rem] uppercase text-center text-white">
             {t("h2")}
           </h2>
-
-          {/* --- Первая карточка --- */}
           <PriceContainer
             background={cardStyles[0].background}
             boxShadow={cardStyles[0].boxShadow}
@@ -114,9 +112,7 @@ const Tarifs = () => {
             </div>
           </PriceContainer>
 
-          {/* --- Вторая карточка --- */}
           <div className="relative">
-            {/* Бэйдж поверх карточки */}
             <div
               className="absolute left-1/2 transform -translate-x-1/2 z-10"
               style={{ top: `-${2.62 / 2}rem` }}
@@ -129,7 +125,6 @@ const Tarifs = () => {
               />
             </div>
 
-            {/* Сама карточка */}
             <PriceContainer
               background={cardStyles[1].background}
               boxShadow={cardStyles[1].boxShadow}
@@ -144,7 +139,7 @@ const Tarifs = () => {
                     </h3>
                     <TarifBadge
                       text="PRO"
-                      background="#000" // или "black"
+                      background="#000"
                       textColor="#fff"
                       boxShadow="0 4px 16px 1px rgba(0, 0, 0, 0.25)"
                     />
@@ -196,7 +191,6 @@ const Tarifs = () => {
             </PriceContainer>
           </div>
 
-          {/* --- Третья карточка --- */}
           <PriceContainer
             background={cardStyles[2].background}
             boxShadow={cardStyles[2].boxShadow}
@@ -211,7 +205,7 @@ const Tarifs = () => {
                   </h3>
                   <TarifBadge
                     text="EXPERT  "
-                    background="#000" // или "black"
+                    background="#000"
                     textColor="#6495ED"
                     boxShadow="0 4px 16px 1px rgba(0, 0, 0, 0.25)"
                   />
