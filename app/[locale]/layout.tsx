@@ -33,7 +33,7 @@ export default async function RootLayout({ children, params }: Props) {
   }
 
   return (
-    <html lang="en" className={raleway.className}>
+    <html lang="ua" className={raleway.className}>
       <body>
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
