@@ -7,18 +7,23 @@ import { routing } from "@/i18n/routing";
 import { getTranslations } from "next-intl/server";
 
 export async function generateMetadata({
-  params: { locale },
+  params,
 }: {
   params: { locale: string };
 }) {
+  const { locale } = await Promise.resolve(params);
+
   const t = await getTranslations("HomePage");
+
   const BASE_URL =
     "https://cyan-dev-test-task-e3j18z6uh-tomas-zingis-projects.vercel.app";
   const currentPath = "/";
+
   const alternates = routing.locales.map((lang: string) => ({
     hrefLang: lang,
     href: `${BASE_URL}/${lang}${currentPath}`,
   }));
+
   alternates.push({
     hrefLang: "x-default",
     href: `${BASE_URL}/${routing.defaultLocale}${currentPath}`,
