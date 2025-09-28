@@ -5,8 +5,6 @@ import { routing } from "@/i18n/routing";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { raleway } from "@/fonts";
 import { Toaster } from "react-hot-toast";
-import { ModalProvider } from "@/components/ModalContext/ModalContext";
-import PageContent from "@/components/PageContext/PageContent";
 
 type Props = {
   children: React.ReactNode;
