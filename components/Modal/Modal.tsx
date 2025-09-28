@@ -55,7 +55,7 @@ export default function Modal({ isOpen, onClose, children }: ModalProps) {
     >
       <div className="relative w-full h-full lg:w-[410px] lg:h-[500px] lg:[padding:90px_40px_70px_40px] lg:modal-desktop lg:rounded-[28px] flex flex-col justify-center items-center bg-[#0c0117] transform transition-transform duration-300">
         <button
-          className="absolute top-[32px] right-[22px] cursor-pointer w-[32px] h-[32px] flex items-center justify-center"
+          className="absolute top-[32px] right-[22px] cursor-pointer w-[32px] h-[32px] flex items-center justify-center z-10"
           onClick={onClose}
           aria-label="Close modal"
         >
@@ -63,12 +63,12 @@ export default function Modal({ isOpen, onClose, children }: ModalProps) {
             <use href="/sprite.svg#icon-close"></use>
           </svg>
         </button>
-        <div className="w-full h-full flex flex-col justify-center items-center px-4">
+        <div className="w-full h-full flex flex-col justify-center items-center px-4 z-5">
           {children}
         </div>
       </div>
-      <GlowCircle className="absolute top-[220px] left-[-150px]" />
-      <GlowCircle className="absolute bottom-[-60px] right-[-100px] bg-[#a75df3]" />
+      <GlowCircle className="absolute top-[220px] left-[-150px] z-1" />
+      <GlowCircle className="absolute bottom-[-60px] right-[-100px] bg-[#a75df3] z-1" />
     </div>,
     document.body
   );
