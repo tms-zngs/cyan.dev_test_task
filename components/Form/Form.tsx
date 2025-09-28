@@ -79,7 +79,7 @@ export default function Form({ onSuccess }: FormProps) {
           value={formData.name}
           onChange={handleChange}
           required
-          className="pl-5 rounded-[0.88rem] w-full h-[2.88rem] bg-white shadow-[0_10px_78px_1px_rgba(121,121,121,0.12)]"
+          className="placeholder:text-[#0c0117] placeholder:font-normal placeholder:text-[14px] pl-5 rounded-[0.88rem] w-full h-[2.88rem] bg-white shadow-[0_10px_78px_1px_rgba(121,121,121,0.12)]"
         />
         <input
           type="text"
@@ -88,7 +88,7 @@ export default function Form({ onSuccess }: FormProps) {
           value={formData.tg}
           onChange={handleChange}
           required
-          className="pl-5 rounded-[0.88rem] w-full h-[2.88rem] bg-white shadow-[0_10px_78px_1px_rgba(121,121,121,0.12)]"
+          className="placeholder:text-[#0c0117] placeholder:font-normal placeholder:text-[14px] pl-5 rounded-[0.88rem] w-full h-[2.88rem] bg-white shadow-[0_10px_78px_1px_rgba(121,121,121,0.12)]"
         />
         <input
           type="email"
@@ -97,14 +97,14 @@ export default function Form({ onSuccess }: FormProps) {
           value={formData.email}
           onChange={handleChange}
           required
-          className="pl-5 rounded-[0.88rem] w-full h-[2.88rem] bg-white shadow-[0_10px_78px_1px_rgba(121,121,121,0.12)]"
+          className="placeholder:text-[#0c0117] placeholder:font-normal placeholder:text-[14px] pl-5 rounded-[0.88rem] w-full h-[2.88rem] bg-white shadow-[0_10px_78px_1px_rgba(121,121,121,0.12)]"
         />
       </div>
 
       <button
         type="submit"
         disabled={isSubmitting}
-        className="mt-auto mb-[40px] rounded-[0.62rem] w-full h-[3.12rem] cursor-pointer bg-white transition-opacity duration-300 hover:opacity-80 disabled:opacity-50"
+        className="font-semibold text-[14px] leading-[1.42857] text-center text-[#0c0117] mt-auto mb-[40px] rounded-[0.62rem] w-full h-[3.12rem] py-[15px] cursor-pointer bg-white transition-opacity duration-300 hover:opacity-80 disabled:opacity-50"
       >
         {isSubmitting ? "sending..." : t("btn")}
       </button>

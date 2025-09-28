@@ -21,9 +21,9 @@ const LocaleSwitcher = () => {
     <div className="relative inline-block">
       <button
         onClick={() => setOpen(!open)}
-        className="inline-flex items-center justify-center gap-[10px]"
+        className="inline-flex items-center justify-center gap-[10px] cursor-pointer"
       >
-        <span className="font--raleway text-white font-bold text-[0.88rem] leading-[1.42857]">
+        <span className="font--raleway text-white font-bold text-[14px] leading-[1.42857] lg:text-[16px] lg:leading-[1.25]">
           {currentLocale.toUpperCase()}
         </span>
         <div className="">
@@ -41,7 +41,7 @@ const LocaleSwitcher = () => {
               <button
                 key={l}
                 onClick={() => changeLocale(l)}
-                className="block w-full text-left px-4 py-2 text-white hover:bg-white/10"
+                className="block w-full text-left px-4 py-2 text-white hover:bg-white/10 cursor-pointer"
               >
                 {l.toUpperCase()}
               </button>

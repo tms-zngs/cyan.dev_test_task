@@ -1,7 +1,8 @@
-import Discover from "@/componets/Discover/Discover";
-import Header from "@/componets/Header/Header";
-import Hero from "@/componets/Hero/Hero";
-import Tarifs from "@/componets/Tarifs/Tarifs";
+import Discover from "@/components/Discover/Discover";
+import GlowCircle from "@/components/GlowCircle/GlowCircle";
+import Header from "@/components/Header/Header";
+import Hero from "@/components/Hero/Hero";
+import Tarifs from "@/components/Tarifs/Tarifs";
 import { routing } from "@/i18n/routing";
 import { getTranslations } from "next-intl/server";
 
@@ -35,7 +36,10 @@ export async function generateMetadata({
 
 const HomePage = async () => {
   return (
-    <div className="flex flex-col bg-[#0c0117]">
+    <div className="relative flex flex-col bg-[#0c0117] overflow-hidden">
+      <GlowCircle className="absolute top-[500px] left-[-55px]" />
+      <GlowCircle className="absolute top-[185px] right-[-10px] bg-[#a75df3]" />
+      <GlowCircle className="absolute top-[970px] right-[-90px]" />
       <Header />
       <Hero />
       <Tarifs />

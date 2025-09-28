@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import GlowCircle from "../GlowCircle/GlowCircle";
+import { createPortal } from "react-dom";
 
 interface ModalProps {
   isOpen: boolean;
@@ -15,12 +17,26 @@ export default function Modal({ isOpen, onClose, children }: ModalProps) {
     if (isOpen) {
       setIsVisible(true);
       document.body.style.overflow = "hidden";
+
+      const handleKeyDown = (e: KeyboardEvent) => {
+        if (e.key === "Escape") {
+          onClose();
+        }
+      };
+
+      document.addEventListener("keydown", handleKeyDown);
+
+      return () => {
+        document.removeEventListener("keydown", handleKeyDown);
+        document.body.style.overflow = "";
+      };
     } else {
       const timeout = setTimeout(() => setIsVisible(false), 300);
       document.body.style.overflow = "";
+
       return () => clearTimeout(timeout);
     }
-  }, [isOpen]);
+  }, [isOpen, onClose]);
 
   if (!isOpen && !isVisible) return null;
 
@@ -28,7 +44,7 @@ export default function Modal({ isOpen, onClose, children }: ModalProps) {
     if (e.target === e.currentTarget) onClose();
   };
 
-  return (
+  return createPortal(
     <div
       className={`fixed inset-0 z-50 flex items-center justify-center bg-[#0c0117] transition-opacity duration-300 ${
         isOpen ? "opacity-100" : "opacity-0"
@@ -55,6 +71,9 @@ export default function Modal({ isOpen, onClose, children }: ModalProps) {
           {children}
         </div>
       </div>
-    </div>
+      <GlowCircle className="absolute top-[220px] left-[-150px]" />
+      <GlowCircle className="absolute bottom-[-60px] right-[-100px] bg-[#a75df3]" />
+    </div>,
+    document.body
   );
 }

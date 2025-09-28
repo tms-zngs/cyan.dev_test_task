@@ -8,9 +8,9 @@ const Container: FC<ContainerProps> = ({ children }) => {
   return (
     <div
       className="
-        w-full
-        max-w-[320px]
         mx-auto
+        w-full max-w-[320px]
+        lg:w-[1120px] lg:max-w-[1120px]
       "
     >
       {children}

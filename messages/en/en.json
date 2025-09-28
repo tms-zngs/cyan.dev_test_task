@@ -4,12 +4,19 @@
     "seo_description": "We are experts in web development and design."
   },
   "hero": {
-    "h1": "Secrets of Videos",
-    "h2": "0 → 100,000 in 90 Days",
-    "p": "Become famous in 3 months without ads! Turn your ideas into millions of views.",
-    "price1": "$40",
-    "price2": "$80",
+    "h1": "Secrets of Viral Videos",
+    "h2": "From 0 to 100,000 in 90 Days",
+    "p": "Become famous only in 3 months without spending on advertising! Learn the secret to creating viral content and turn your ideas into millions of views.",
+    "price1": "1000 uah",
+    "price2": "2000 uah",
     "btn": "Buy with Discount"
+  },
+  "DesktopLinks": {
+    "1": "Structure",
+    "2": "About Me",
+    "3": "Plus",
+    "4": "Reviews",
+    "5": "FAQ"
   },
   "Tarifs": {
     "h2": "Prices"

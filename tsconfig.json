@@ -29,7 +29,7 @@
     ".next/types/**/*.ts",
     "fonts.ts",
     "lib/datocms.js",
-    "componets/CardContent/CardContent.jsx"
+    "components/CardContent/CardContent.jsx"
   ],
   "exclude": ["node_modules"]
 }
