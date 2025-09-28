@@ -29,4 +29,9 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+
+  .lg\:modal-desktop {
+    background: #0c0117;
+    box-shadow: inset 4px 6px 10px 4px rgba(167, 93, 243, 0.2);
+  }
 }

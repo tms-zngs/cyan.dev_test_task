@@ -71,40 +71,45 @@ export default function Form({ onSuccess }: FormProps) {
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col w-[19.81rem] h-full">
-      <div className="flex flex-col space-y-4">
-        <input
-          type="text"
-          name="name"
-          placeholder={t("name")}
-          value={formData.name}
-          onChange={handleChange}
-          required
-          className="placeholder:text-[#0c0117] placeholder:font-normal placeholder:text-[14px] pl-5 rounded-[0.88rem] w-full h-[2.88rem] bg-white shadow-[0_10px_78px_1px_rgba(121,121,121,0.12)]"
-        />
-        <input
-          type="text"
-          name="tg"
-          placeholder={t("tg")}
-          value={formData.tg}
-          onChange={handleChange}
-          required
-          className="placeholder:text-[#0c0117] placeholder:font-normal placeholder:text-[14px] pl-5 rounded-[0.88rem] w-full h-[2.88rem] bg-white shadow-[0_10px_78px_1px_rgba(121,121,121,0.12)]"
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder={t("email")}
-          value={formData.email}
-          onChange={handleChange}
-          required
-          className="placeholder:text-[#0c0117] placeholder:font-normal placeholder:text-[14px] pl-5 rounded-[0.88rem] w-full h-[2.88rem] bg-white shadow-[0_10px_78px_1px_rgba(121,121,121,0.12)]"
-        />
+      <div className="flex flex-col">
+        <h2 className="font-bold text-[1.5rem] uppercase text-center text-white mb-[36px] mt-[160px] lg:mt-[0px]">
+          {t("h2")}
+        </h2>
+        <div className="flex flex-col space-y-4">
+          <input
+            type="text"
+            name="name"
+            placeholder={t("name")}
+            value={formData.name}
+            onChange={handleChange}
+            required
+            className="placeholder:text-[#0c0117] placeholder:font-normal placeholder:text-[14px] pl-5 rounded-[0.88rem] w-full h-[2.88rem] bg-white shadow-[0_10px_78px_1px_rgba(121,121,121,0.12)]"
+          />
+          <input
+            type="text"
+            name="tg"
+            placeholder={t("tg")}
+            value={formData.tg}
+            onChange={handleChange}
+            required
+            className="placeholder:text-[#0c0117] placeholder:font-normal placeholder:text-[14px] pl-5 rounded-[0.88rem] w-full h-[2.88rem] bg-white shadow-[0_10px_78px_1px_rgba(121,121,121,0.12)]"
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder={t("email")}
+            value={formData.email}
+            onChange={handleChange}
+            required
+            className="placeholder:text-[#0c0117] placeholder:font-normal placeholder:text-[14px] pl-5 rounded-[0.88rem] w-full h-[2.88rem] bg-white shadow-[0_10px_78px_1px_rgba(121,121,121,0.12)]"
+          />
+        </div>
       </div>
 
       <button
         type="submit"
         disabled={isSubmitting}
-        className="font-semibold text-[14px] leading-[1.42857] text-center text-[#0c0117] mt-auto mb-[40px] rounded-[0.62rem] w-full h-[3.12rem] py-[15px] cursor-pointer bg-white transition-opacity duration-300 hover:opacity-80 disabled:opacity-50"
+        className="font-semibold text-[14px] leading-[1.42857] text-center text-[#0c0117] mt-auto lg:mt-[40px] mb-[40px] rounded-[0.62rem] w-full h-[3.12rem] py-[15px] cursor-pointer bg-white transition-opacity duration-300 hover:opacity-80 disabled:opacity-50"
       >
         {isSubmitting ? "sending..." : t("btn")}
       </button>

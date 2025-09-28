@@ -11,7 +11,6 @@ const Discover = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const t = useTranslations("discover");
-  const m = useTranslations("form");
   const openModal = () => {
     setIsModalOpen(true);
   };
@@ -21,7 +20,7 @@ const Discover = () => {
       className="mb-[48px] lg:mt-[60px] lg:mb-[66px] relative overflow-hidden"
     >
       <Container>
-        <div className="z-10">
+        <div className="py-[114px] lg:py-[62px] z-10">
           <h2 className="font-bold text-[20px] lg:text-[36px] uppercase text-center text-white leading-[1.3] mb-[20px] lg:w-[500px] lg:mx-auto">
             {t("h2_start")}
             <span
@@ -50,13 +49,10 @@ const Discover = () => {
         </div>
       </Container>
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-        <h2 className="font-bold text-[1.5rem] uppercase text-center text-white mb-[36px] mt-[160px]">
-          {m("h2")}
-        </h2>
         <Form onSuccess={() => setIsModalOpen(false)} />
       </Modal>
-      <GlowCircle className="absolute top-[-120px] left-[-120px] lg:hidden" />
-      <GlowCircle className="absolute bottom-[-120px] right-[-120px] lg:hidden" />
+      <GlowCircle className="absolute top-[-120px] left-[-120px] " />
+      <GlowCircle className="absolute bottom-[-120px] right-[-120px] " />
     </section>
   );
 };

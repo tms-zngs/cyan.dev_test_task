@@ -15,7 +15,6 @@ import { useState } from "react";
 const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const t = useTranslations("hero");
-  const m = useTranslations("form");
   return (
     <header
       id="header"
@@ -59,9 +58,6 @@ const Header = () => {
         </div>
       </Container>
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-        <h2 className="font-bold text-[1.5rem] uppercase text-center text-white mb-[36px] mt-[160px]">
-          {m("h2")}
-        </h2>
         <Form onSuccess={() => setIsModalOpen(false)} />
       </Modal>
     </header>

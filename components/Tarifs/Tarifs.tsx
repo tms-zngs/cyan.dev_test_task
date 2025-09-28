@@ -15,7 +15,6 @@ const Tarifs = () => {
   const locale = useLocale();
   const [tariffs, setTariffs] = useState<Tariff[]>([]);
   const t = useTranslations("Tarifs");
-  const m = useTranslations("form");
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
@@ -259,9 +258,6 @@ const Tarifs = () => {
         </div>
       </Container>
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-        <h2 className="font-bold text-[1.5rem] uppercase text-center text-white mb-[36px] mt-[160px]">
-          {m("h2")}
-        </h2>
         <Form onSuccess={() => setIsModalOpen(false)} />
       </Modal>
     </section>

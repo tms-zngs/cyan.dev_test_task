@@ -53,13 +53,9 @@ export default function Modal({ isOpen, onClose, children }: ModalProps) {
       role="dialog"
       aria-modal="true"
     >
-      <div
-        className={`relative w-full h-full flex flex-col justify-center items-center bg-[#0c0117] transform transition-transform duration-300 ${
-          isOpen ? "scale-100" : "scale-95"
-        }`}
-      >
+      <div className="relative w-full h-full lg:w-[410px] lg:h-[500px] lg:[padding:90px_40px_70px_40px] lg:modal-desktop lg:rounded-[28px] flex flex-col justify-center items-center bg-[#0c0117] transform transition-transform duration-300">
         <button
-          className="absolute top-4 right-4 cursor-pointer"
+          className="absolute top-[32px] right-[22px] cursor-pointer w-[32px] h-[32px] flex items-center justify-center"
           onClick={onClose}
           aria-label="Close modal"
         >

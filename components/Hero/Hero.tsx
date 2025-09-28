@@ -12,7 +12,6 @@ export default function Hero() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const t = useTranslations("hero");
-  const m = useTranslations("form");
 
   return (
     <section id="hero" className="mb-[132px]">
@@ -78,9 +77,6 @@ export default function Hero() {
         </div>
       </Container>
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-        <h2 className="font-bold text-[1.5rem] uppercase text-center text-white mb-[36px] mt-[160px]">
-          {m("h2")}
-        </h2>
         <Form onSuccess={() => setIsModalOpen(false)} />
       </Modal>
     </section>

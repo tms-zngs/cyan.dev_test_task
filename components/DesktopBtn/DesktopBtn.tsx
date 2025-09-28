@@ -23,8 +23,8 @@ const DesktopBtn: React.FC<DesktopBtnProps> = ({
   return (
     <button
       className={`relative h-[3.75rem] flex items-center justify-center bg-white rounded-full
-                 hover:bg-[#f0f0f0] hover:shadow-lg transition-all duration-200 hover:scale-105 cursor-pointer
-                 ${className}`}
+      hover:bg-[#f0f0f0] hover:shadow-lg transition-all duration-200 hover:scale-105 cursor-pointer
+      ${className}`}
       onClick={onClick}
       style={style}
     >

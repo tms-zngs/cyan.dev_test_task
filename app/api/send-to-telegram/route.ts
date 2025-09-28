@@ -4,6 +4,7 @@ import axios, { AxiosError } from "axios";
 export async function POST(request: NextRequest) {
   const botToken = process.env.BOT_TOKEN;
   const chatId = process.env.CHAT_ID;
+
   if (!botToken || !chatId) {
     console.error(
       "BOT_TOKEN or CHAT_ID is missing from environment variables."
@@ -19,10 +20,11 @@ export async function POST(request: NextRequest) {
 
     if (!name || !tg || !email) {
       return NextResponse.json(
-        { error: "Не все поля формы заполнены." },
+        { error: "Не все обязательные поля формы заполнены." },
         { status: 400 }
       );
     }
+
     const messageText = `
       Нова заявка на покупку!
       ---------------------------------
@@ -33,43 +35,36 @@ export async function POST(request: NextRequest) {
 
     const telegramApiUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
 
-    const response = await axios.post(telegramApiUrl, {
+    await axios.post(telegramApiUrl, {
       chat_id: chatId,
       text: messageText,
+      parse_mode: "HTML",
     });
 
-    if (response.status === 200) {
-      return NextResponse.json(
-        { message: "Сообщение успешно отправлено!" },
-        { status: 200 }
-      );
-    } else {
-      console.error("Ошибка при отправке в Telegram:", response.data);
-      return NextResponse.json(
-        { error: "Ошибка Telegram API", details: response.data },
-        { status: 500 }
-      );
-    }
+    return NextResponse.json(
+      { message: "Сообщение успешно отправлено!" },
+      { status: 200 }
+    );
   } catch (error) {
     if (axios.isAxiosError(error)) {
       const axiosError: AxiosError = error;
-      console.error(
-        "Ошибка при отправке в Telegram. Статус:",
-        axiosError.response?.status,
-        "Данные:",
-        axiosError.response?.data
-      );
+      const status = axiosError.response?.status || 500;
+      const details = axiosError.response?.data || axiosError.message;
+
+      console.error(`Ошибка Telegram API. Статус: ${status}. Данные:`, details);
+
       return NextResponse.json(
         {
           error: "Ошибка при отправке сообщения в Telegram.",
-          details: axiosError.response?.data || axiosError.message,
+          details: details,
         },
-        { status: axiosError.response?.status || 500 }
+        { status: status }
       );
     }
-    console.error("Сетевая ошибка при отправке в Telegram:", error);
+
+    console.error("Непредвиденная ошибка:", error);
     return NextResponse.json(
-      { error: "Сетевая ошибка при отправке сообщения." },
+      { error: "Сетевая ошибка или ошибка обработки запроса." },
       { status: 500 }
     );
   }
